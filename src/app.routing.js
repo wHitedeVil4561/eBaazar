@@ -7,6 +7,8 @@ import ProductLayout from "./modules/products/Product";
 import Login from "./modules/auth/login/Login";
 import "./app.scss";
 import Dashboard from "./modules/dashboard/Dashboard";
+import SupplierLayout from "./modules/suppliers/Suppliers";
+import AddStock from "./modules/suppliers/components/add-stock/AddStock";
 
 const Applayout = () => {
   return (
@@ -29,12 +31,22 @@ const appRouter = createBrowserRouter([
       {
         path: "/product",
         element: <ProductLayout />,
-        children:[
-            {path:'/product',element:<Product/>},
-            {path:'/product/add-product',element:<AddProduct/>}
-        ]
+        children: [
+          { path: "/product", element: <Product /> },
+          { path: "/product/add-product", element: <AddProduct /> },
+        ],
       },
-      { path: "/supplier", element: <Supplier /> },
+      {
+        path: "/",
+        element: <SupplierLayout />,
+        children: [
+          { path: "/supplier", element: <Supplier /> },
+          {
+            path: "/supplier/add-stock",
+            element: <AddStock />,
+          },
+        ],
+      },
     ],
   },
 ]);
