@@ -1,1 +1,2 @@
-# ebaazar-frontend
+# eBaazar
+eBaazar-frontend-react
