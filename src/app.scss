@@ -1,0 +1,11 @@
+.main{
+    width: 100%;
+    display: flex;
+    .header{
+        width: 200px;
+
+    }
+    .router{
+        width: calc(100% - 200px);
+    }
+}
