@@ -1,0 +1,28 @@
+@import "../../../constansts/variables.scss";
+.main-header{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    gap: 40px;
+    .logo{
+        font-size: 32px;
+        font-weight: 700;
+        color: $blue;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .tabs{
+        font-size: 20px;
+        font-weight: 600;
+        color: $fade-color;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .tab-item{
+            display: flex;
+        align-items: center;
+        gap: 10px;
+        }
+    }
+}
