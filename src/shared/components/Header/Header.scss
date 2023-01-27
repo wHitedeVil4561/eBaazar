@@ -2,10 +2,16 @@
 .main-header{
     display: flex;
     flex-direction: column;
-    padding: 20px 40px;
+    align-items: center;
+    padding: 40px;
+    min-width: 250px;
+    min-height: 100vh;
     gap: 40px;
+    box-shadow:4px 0px 10px $neu-2;
+    background: $light-white;
+    font-family: 'lato';
     .logo{
-        font-size: 32px;
+        font-size: 36px;
         font-weight: 700;
         color: $blue;
         display: flex;
