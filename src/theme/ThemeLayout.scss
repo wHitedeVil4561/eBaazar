@@ -1,0 +1,42 @@
+@import "../constansts/variables.scss";
+.main {
+  width: 100%;
+  display: flex;
+  background: $bg;
+  .header {
+    width: 250px;
+  }
+  .screen {
+    padding: 20px;
+    width: calc(100% - 250px);
+    max-height: 100vh;
+    
+    font-family: "lato";
+    overflow: auto;
+    .sub-header {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      .page-title {
+        letter-spacing: 2px;
+        color: $dark-blue;
+
+        font-family: "comic-neue";
+      }
+      .corner-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        .profile-img {
+          width: 40px;
+          height: 40px;
+        }
+        .button {
+          outline: none;
+          border: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../../../constansts/variables.scss";
+.product-table {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  .table-container{
+    .table-header{
+        background: $bg-blue;
+        color: $white
+    }
+  }
+}

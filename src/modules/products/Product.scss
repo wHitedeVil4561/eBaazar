@@ -1,0 +1,63 @@
+@import "../../constansts/variables.scss";
+.main-product{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .product-header {
+        display: flex;
+        justify-content: space-between;
+        .container {
+          display: flex;
+          gap: 30px;
+          .button {
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: "roboto";
+            font-size: 20px;
+            font-weight: 600;
+            color: $white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+          }
+          .button.add-product {
+            background: rgba($color: $sky-blue, $alpha: 0.8);
+            &:hover {
+              background: rgba($color: $sky-blue, $alpha: 1);
+            }
+          }
+          .button.add-category {
+            background: rgba($color: $pink, $alpha: 0.7);
+            &:hover {
+              background: rgba($color: $pink, $alpha: 1);
+            }
+          }
+          .button.download {
+            border-radius: 50%;
+            padding: 10px;
+            background: rgba($color: $bg-blue, $alpha: 0.7);
+            &:hover {
+              background: rgba($color: $bg-blue, $alpha: 1);
+            }
+          }
+          .button.bulk-upload {
+            background: rgba($color: $light-orange, $alpha: 0.8);
+            &:hover {
+              background: rgba($color: $light-orange, $alpha: 1);
+            }
+          }
+          .search-input{
+            border: 1px solid  $beige;
+            border-radius: 10px;
+            min-width: 250px;
+            outline: none;
+            font-size: 16px;
+            padding:  0 20px;
+          }
+        }
+      }
+
+}

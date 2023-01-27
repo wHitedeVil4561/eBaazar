@@ -5,11 +5,12 @@ import ReceiptOutlinedIcon from '@mui/icons-material/ReceiptOutlined';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import GroupsIcon from '@mui/icons-material/Groups';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import logo  from "../../../assets/img/bag.png"
 const Header = () => {
   return (
     <div className='main-header'>
       <div className="logo">
-        <LocalMallIcon/>
+        <img src={logo}/>
         eBaazar</div>
       <div className="tabs">
         <div className="tab-item"><DashboardIcon/>Dashboard</div>
