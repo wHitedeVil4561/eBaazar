@@ -19,7 +19,7 @@ const ThemeLayout = () => {
       <Header className="header" />
       <div className="screen">
         <div className="sub-header">
-          <h1 className="page-title">{PAGE_TITLE}</h1>
+          <h1 className="page-title text-2xl">{PAGE_TITLE}</h1>
           <div className="corner-header">
             <img src={profile_image_path} className="profile-img" />
             <div className="role-type">

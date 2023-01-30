@@ -1,19 +1,29 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Supplier from "./modules/suppliers/components/supplier-mainscreen/SupplierMainscreen";
-import AddProduct from "./modules/products/components/add-product/AddProduct";
-import ProductLayout from "./modules/products/Product";
+import AuthLayout from "./modules/auth/Auth";
 import Login from "./modules/auth/login/Login";
-import Dashboard from "./modules/dashboard/Dashboard";
-import SupplierLayout from "./modules/suppliers/Suppliers";
-import AddStock from "./modules/suppliers/components/add-stock/AddStock";
+import ForgotPassword from "./modules/auth/components/ForgotPassword";
+import ResetPassword from "./modules/auth/components/ResetPassword";
 import ThemeLayout from "./theme/ThemeLayout";
+import Dashboard from "./modules/dashboard/Dashboard";
+import ProductLayout from "./modules/products/Product";
 import ProductTable from "./modules/products/components/product-table/ProductTable";
-
+import AddProduct from "./modules/products/components/add-product/AddProduct";
+import SupplierLayout from "./modules/suppliers/Suppliers";
+import Supplier from "./modules/suppliers/components/StockTable";
+import AddStock from "./modules/suppliers/components/AddStock";
 
 
 const appRouter = createBrowserRouter([
-  { path: "/", element: <Login /> },
+  {
+    path: "/",
+    element: <AuthLayout />,
+    children: [
+      { path: "/", element: <Login /> },
+      { path: "/forgot-password", element: <ForgotPassword /> },
+      { path: "/reset-password", element: <ResetPassword /> },
+    ],
+  },
   {
     path: "/",
     element: <ThemeLayout />,

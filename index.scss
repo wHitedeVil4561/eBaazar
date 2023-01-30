@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 *,
 body,
 html {
@@ -45,4 +48,16 @@ body {
   width: 0;
   background-color: rgba($color: #707070, $alpha: 0.2);
   border: 1px solid rgba($color: #707070, $alpha: 0.3);
+}
+::-webkit-scrollbar:horizontal {
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  display: none;
+}
+.error-hint{
+  color: red;
 }
