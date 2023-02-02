@@ -1,0 +1,72 @@
+@import "../../../../constansts/variables.scss";
+.add-product-screen {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  .add-product-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: "lato";
+    font-size: 20px;
+    font-weight: 600;
+    color: $dark-blue;
+  }
+  .form {
+    padding: 20px 40px;
+    border-radius: 20px 40px;
+    box-shadow: 10px 10px 10px $neu-2, -10px -10px 10px $light-white;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-family: "roboto";
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        .form-item {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          label {
+            font-size: 18px;
+          }
+          input {
+            min-width: 300px;
+            width: 100%;
+            height: 40px;
+            border-radius: 10px;
+            outline: none;
+            border: 1px solid $input-border;
+            padding: 20px;
+            font-size: 16px;
+          }
+        }
+      }
+      .row.btn {
+        margin-top: 20px;
+        gap: 20px;
+        justify-content: center;
+        .button {
+          border: 1px solid $dark-blue;
+          outline: none;
+          width: 150px;
+          padding: 10px;
+          font-size: 20px;
+          font-family: "comic-neue";
+          font-weight: 700;
+          border-radius: 10px;
+          background: $light-white;
+          cursor: pointer;
+          &:hover {
+            background: $blue-hues;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

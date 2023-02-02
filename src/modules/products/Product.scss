@@ -24,30 +24,22 @@
             cursor: pointer;
           }
           .button.add-product {
-            background: rgba($color: $sky-blue, $alpha: 0.8);
-            &:hover {
-              background: rgba($color: $sky-blue, $alpha: 1);
-            }
+            background: $sky-blue;
+            
           }
           .button.add-category {
-            background: rgba($color: $pink, $alpha: 0.7);
-            &:hover {
-              background: rgba($color: $pink, $alpha: 1);
-            }
+            background: $pink;
+            
           }
           .button.download {
             border-radius: 50%;
             padding: 10px;
-            background: rgba($color: $bg-blue, $alpha: 0.7);
-            &:hover {
-              background: rgba($color: $bg-blue, $alpha: 1);
-            }
+            background: $bg-blue;
+           
           }
           .button.bulk-upload {
-            background: rgba($color: $light-orange, $alpha: 0.8);
-            &:hover {
-              background: rgba($color: $light-orange, $alpha: 1);
-            }
+            background: $light-orange;
+           
           }
           .search-input{
             border: 1px solid  $beige;
