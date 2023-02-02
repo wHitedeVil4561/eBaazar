@@ -12,9 +12,13 @@ import AddProduct from "./modules/products/components/add-product/AddProduct";
 import SupplierLayout from "./modules/suppliers/Suppliers";
 import Supplier from "./modules/suppliers/components/StockTable";
 import AddStock from "./modules/suppliers/components/AddStock";
-
+import Header from "./theme/components/Header";
 
 const appRouter = createBrowserRouter([
+  {
+    path: "/header",
+    element: <Header />,
+  },
   {
     path: "/",
     element: <AuthLayout />,

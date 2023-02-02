@@ -11,7 +11,7 @@ import profile_image_path from "../assets/img/profile-circle.png";
 import LanguageIcon from "@mui/icons-material/Language";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import Header from "../shared/components/Header/Header";
+import Header from "./components/Header"
 import Topnav from "../shared/components/Header/Topnav";
 const eBaazar = "eBaazar";
 const Dashboard = "Dashboard";
@@ -41,11 +41,9 @@ const ThemeLayout = () => {
   };
   return (
     <div className="bg-neu-light flex">
-      <Header/>
-      <div className="flex flex-col gap-5">
-        <Topnav/>
-        <Outlet/>
-      </div>
+      <Header />
+      <Topnav />
+      <Outlet />
     </div>
   );
 };
