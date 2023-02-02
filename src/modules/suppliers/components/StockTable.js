@@ -8,7 +8,7 @@ const columns = [
   { id: "index", label: "S.No.", minWidth: 80, align: "center" },
   { id: "dealerName", label: "Dealer Name", minWidth: 150 },
   { id: "invoiceNumber", label: "Invoice Number", minWidth: 160 },
-  { id: "grandTotal", label: "Grand Total", minWidth: 120 },
+  { id: "grandTotal", label: "Grand Total", minWidth: 150 },
   { id: "purchaseDate", label: "Purchase Date", minWidth: 150 },
   { id: "dueAmount", label: "Due Amount", minWidth: 150 },
   {
@@ -144,10 +144,10 @@ const Supplier = () => {
     setAnchorEl(null);
   };
   return (
-    <div className="flex gap-5">
+    <div className="flex flex-col gap-5">
       <Filter />
-      <div className="overflow-auto rounded-t-xl">
-        <table className="table-auto w-full ">
+      <div className=" rounded-t-xl">
+        <table className="table-auto">
           <thead>
             <tr className="bg-blue text-white">
               {columns.map((column) => {
@@ -210,17 +210,29 @@ const Supplier = () => {
                       anchorEl={anchorEl}
                       open={open}
                       onClose={handleClose}
-                      // MenuListProps={{
-                      //   "aria-labelledby": "basic-button",
-                      // }}
-                      // anchorOrigin={{
-                      //   vertical: 'top',
-                      //   horizontal: 'left',
-                      // }}
-                      // transformOrigin={{
-                      //   vertical: 'top',
-                      //   horizontal: 'left',
-                      // }}
+                      MenuListProps={{
+                        "aria-labelledby": "resources-button",
+                        backgroundColor: "#FFFFFF",
+                      }}
+                      PaperProps={{
+                        style: {
+                          borderRadius: 10,
+                          backgroundColor: "#FFFFFF",
+                          boxShadow:'none',
+                          width:'150px'
+                        },
+                      }}
+                      style={{
+                        backgroundColor: "rgba(0, 0, 0, 0.05)",
+                      }}
+                      anchorOrigin={{
+                        vertical: "bottom",
+                        horizontal: "left",
+                      }}
+                      transformOrigin={{
+                        vertical: "top",
+                        horizontal: "right",
+                      }}
                     >
                       <MenuItem onClick={handleClose}>Payment</MenuItem>
                       <MenuItem onClick={handleClose}>Delete</MenuItem>
@@ -237,3 +249,55 @@ const Supplier = () => {
   );
 };
 export default Supplier;
+{/* <Menu
+  id="basic-menu"
+  anchorEl={anchorEl}
+  open={open}
+  onClose={handleClose}
+  MenuListProps={{
+    "aria-labelledby": "resources-button",
+    backgroundColor: "#FFFFFF",
+  }}
+  PaperProps={{
+    style: {
+      borderRadius: 10,
+      backgroundColor: "#FFFFFF",
+    },
+  }}
+  style={{
+    marginTop: 52,
+    backgroundColor: "rgba(0, 0, 0, 0.27)",
+  }}
+  anchorOrigin={{
+    vertical: "bottom",
+    horizontal: "right",
+  }}
+  transformOrigin={{
+    vertical: "top",
+    horizontal: "right",
+  }}
+>
+  <MenuItem onClick={onPressApprove}>
+    <img src={images.singleTickIcon} alt="" className={styles.singleTickIcon} />
+    <p className={styles.approveTextStyle}>Approve</p>
+  </MenuItem>
+  <MenuItem onClick={handleClose}>
+    <img src={images.crossIcon} alt="" className={styles.crossIcon} />
+    <p className={styles.rejectTextStyle}>Reject</p>
+  </MenuItem>
+  <MenuItem onClick={handleClose}>
+    <img src={images.doubleTickIcon} alt="" className={styles.doubleTickIcon} />
+    <p className={styles.approvedWithChangesTextStyle}>Approved with changes</p>
+  </MenuItem>
+  <MenuItem style={{ alignItems: "flex-start" }} onClick={handleClose}>
+    <img
+      src={images.moreDetailsImage}
+      alt=""
+      className={styles.moreDetailsImageStyle}
+    />
+    <div>
+      <p className={styles.viewMaintenanceTextStyle}>View maintenance bill, </p>
+      <p className={styles.viewMaintenanceTextStyle}>note & details</p>
+    </div>
+  </MenuItem>
+</Menu>; */}

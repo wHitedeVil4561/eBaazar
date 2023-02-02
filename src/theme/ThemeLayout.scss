@@ -3,14 +3,12 @@
   width: 100%;
   display: flex;
   background: $bg;
-  .header {
-    width: 250px;
-  }
+
   .screen {
     padding: 20px;
-    width: calc(100% - 250px);
+    width: 100%;
     max-height: 100vh;
-    
+
     font-family: "lato";
     overflow: auto;
     .sub-header {

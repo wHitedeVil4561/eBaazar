@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./ThemeLayout.scss";
+import logo from "../assets/img/bag.png";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
+import InventoryIcon from "@mui/icons-material/Inventory";
+import GroupsIcon from "@mui/icons-material/Groups";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import profile_image_path from "../assets/img/profile-circle.png";
 import LanguageIcon from "@mui/icons-material/Language";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import Header from "../shared/components/Header/Header";
+import Topnav from "../shared/components/Header/Topnav";
+const eBaazar = "eBaazar";
+const Dashboard = "Dashboard";
+const billing = "Billing";
+const products = "Products";
+const customers = "Customers";
+const suppliers = "Suppliers";
 const ThemeLayout = () => {
   const PAGE_TITLE = "Product Screen";
   const NAME = "Sumit Gupta";
@@ -14,25 +27,24 @@ const ThemeLayout = () => {
     setDarkTheme(!darkTheme);
   };
   const role = "Admin";
+  const [width, setWindowWidth] = useState(0);
+  useEffect(() => {
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+    };
+  }, []);
+  const updateDimensions = () => {
+    const width = window.innerWidth;
+    setWindowWidth(width);
+  };
   return (
-    <div className="main">
-      <Header className="header" />
-      <div className="screen">
-        <div className="sub-header">
-          <h1 className="page-title text-2xl">{PAGE_TITLE}</h1>
-          <div className="corner-header">
-            <img src={profile_image_path} className="profile-img" />
-            <div className="role-type">
-              {NAME} <br />
-              {role}
-            </div>
-            <LanguageIcon className="button" />
-            <button onClick={ChangeTheme} className="button">
-              {darkTheme ? <DarkModeIcon /> : <LightModeIcon />}
-            </button>
-          </div>
-        </div>
-        <Outlet />
+    <div className="bg-neu-light flex">
+      <Header/>
+      <div className="flex flex-col gap-5">
+        <Topnav/>
+        <Outlet/>
       </div>
     </div>
   );
