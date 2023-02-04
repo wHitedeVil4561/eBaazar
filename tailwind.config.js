@@ -24,6 +24,11 @@ module.exports = {
         "blue-hues": "#464493",
         "input-border": "#bfd1e3",
       },
+      fontFamily:{
+        lato:'lato',
+        comic:'comic-neue',
+        roboto:'Roboto'
+      }
     },
   },
   plugins: [require("@tailwindcss/forms")],

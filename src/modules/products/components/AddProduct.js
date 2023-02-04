@@ -1,5 +1,4 @@
 import React from "react";
-import "./AddProduct.scss";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import { useFormik } from "formik";
 import * as Yup from "yup";
