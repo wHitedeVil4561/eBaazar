@@ -1,79 +1,85 @@
-import React from "react";
+import React, { useState } from "react";
 import Filter from "../../../shared/components/Filter";
-
-
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 const ProductTable = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const columns = [
     {
-      field: "id",
-      headerName: "S.No.",
-      width: 70,
-      headerClassName: "table-header",
+      id: "index",
+      label: "S.No.",
+      minWidth: 70,
     },
     {
-      field: "upc_code",
-      headerName: "UPC Code",
-      width: 120,
-      headerClassName: "table-header",
+      id: "upc_code",
+      label: "UPC Code",
+      minWidth: 120,
     },
     {
-      field: "productName",
-      headerName: "Product Name",
-      width: 150,
-      headerClassName: "table-header",
+      id: "productName",
+      label: "Product Name",
+      minWidth: 150,
     },
     {
-      field: "catogery",
-      headerName: "Category",
-      width: 100,
-      headerClassName: "table-header",
+      id: "catogery",
+      label: "Category",
+      minWidth: 100,
     },
     {
-      field: "costPrice",
-      headerName: "Cost Price",
-      width: 120,
-      headerClassName: "table-header",
+      id: "costPrice",
+      label: "Cost Price",
+      minWidth: 120,
     },
     {
-      field: "wholesalePrice",
-      headerName: "Wholesale Price",
-      width: 120,
-      headerClassName: "table-header",
+      id: "wholesalePrice",
+      label: "Wholesale Price",
+      minWidth: 160,
     },
     {
-      field: "retailsalePrice",
-      headerName: "Retailsale Price",
-      width: 120,
-      headerClassName: "table-header",
+      id: "retailsalePrice",
+      label: "Retailsale Price",
+      minWidth: 150,
     },
     {
-      field: "discount",
-      headerName: "Discount",
-      width: 100,
-      headerClassName: "table-header",
+      id: "discount",
+      label: "Discount",
+      minWidth: 100,
     },
     {
-      field: "quantity",
-      headerName: "Quantity",
-      width: 100,
-      headerClassName: "table-header",
+      id: "quantity",
+      label: "Quantity",
+      minWidth: 100,
     },
     {
-      field: "stockType",
-      headerName: "Stock Type",
-      width: 100,
-      headerClassName: "table-header",
+      id: "stockType",
+      label: "Stock Type",
+      minWidth: 100,
     },
     {
-      field: "bulkQnt",
-      headerName: "Bulk Quantity",
-      width: 150,
-      headerClassName: "table-header",
+      id: "bulkQnt",
+      label: "Bulk Quantity",
+      minWidth: 150,
+    },
+    {
+      id: "action",
+      label: "Action(s)",
+      minWidth: 150,
+      align: "center",
     },
   ];
   const rows = [
     {
-      id: 1,
+      index: 1,
       upc_code: "Snow",
       productName: "Jon",
       catogery: 35,
@@ -86,10 +92,10 @@ const ProductTable = () => {
       quantity: 35,
     },
     {
-      id: 2,
-      upc_code: "Lannister",
-      productName: "Cersei",
-      catogery: 42,
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
       costPrice: 1,
       wholesalePrice: "Snow",
       retailsalePrice: "Jon",
@@ -99,10 +105,10 @@ const ProductTable = () => {
       quantity: 35,
     },
     {
-      id: 3,
-      upc_code: "Lannister",
-      productName: "Jaime",
-      catogery: 45,
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
       costPrice: 1,
       wholesalePrice: "Snow",
       retailsalePrice: "Jon",
@@ -112,10 +118,10 @@ const ProductTable = () => {
       quantity: 35,
     },
     {
-      id: 4,
-      upc_code: "Stark",
-      productName: "Arya",
-      catogery: 16,
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
       costPrice: 1,
       wholesalePrice: "Snow",
       retailsalePrice: "Jon",
@@ -125,10 +131,10 @@ const ProductTable = () => {
       quantity: 35,
     },
     {
-      id: 5,
-      upc_code: "Targaryen",
-      productName: "Daenerys",
-      catogery: null,
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
       costPrice: 1,
       wholesalePrice: "Snow",
       retailsalePrice: "Jon",
@@ -138,10 +144,10 @@ const ProductTable = () => {
       quantity: 35,
     },
     {
-      id: 6,
-      upc_code: "Melisandre",
-      productName: null,
-      catogery: 150,
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
       costPrice: 1,
       wholesalePrice: "Snow",
       retailsalePrice: "Jon",
@@ -151,10 +157,10 @@ const ProductTable = () => {
       quantity: 35,
     },
     {
-      id: 7,
-      upc_code: "Clifford",
-      productName: "Ferrara",
-      catogery: 44,
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
       costPrice: 1,
       wholesalePrice: "Snow",
       retailsalePrice: "Jon",
@@ -164,10 +170,10 @@ const ProductTable = () => {
       quantity: 35,
     },
     {
-      id: 8,
-      upc_code: "Frances",
-      productName: "Rossini",
-      catogery: 36,
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
       costPrice: 1,
       wholesalePrice: "Snow",
       retailsalePrice: "Jon",
@@ -177,10 +183,10 @@ const ProductTable = () => {
       quantity: 35,
     },
     {
-      id: 9,
-      upc_code: "Roxie",
-      productName: "Harvey",
-      catogery: 65,
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
       costPrice: 1,
       wholesalePrice: "Snow",
       retailsalePrice: "Jon",
@@ -190,10 +196,10 @@ const ProductTable = () => {
       quantity: 35,
     },
     {
-      id: 10,
-      upc_code: "Roxie",
-      productName: "Harvey",
-      catogery: 65,
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
       costPrice: 1,
       wholesalePrice: "Snow",
       retailsalePrice: "Jon",
@@ -203,10 +209,10 @@ const ProductTable = () => {
       quantity: 35,
     },
     {
-      id: 11,
-      upc_code: "Roxie",
-      productName: "Harvey",
-      catogery: 65,
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
       costPrice: 1,
       wholesalePrice: "Snow",
       retailsalePrice: "Jon",
@@ -216,10 +222,62 @@ const ProductTable = () => {
       quantity: 35,
     },
     {
-      id: 12,
-      upc_code: "Roxie",
-      productName: "Harvey",
-      catogery: 65,
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
+      costPrice: 1,
+      wholesalePrice: "Snow",
+      retailsalePrice: "Jon",
+      discount: 35,
+      stockType: "Jon",
+      bulkQnt: 35,
+      quantity: 35,
+    },
+    {
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
+      costPrice: 1,
+      wholesalePrice: "Snow",
+      retailsalePrice: "Jon",
+      discount: 35,
+      stockType: "Jon",
+      bulkQnt: 35,
+      quantity: 35,
+    },
+    {
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
+      costPrice: 1,
+      wholesalePrice: "Snow",
+      retailsalePrice: "Jon",
+      discount: 35,
+      stockType: "Jon",
+      bulkQnt: 35,
+      quantity: 35,
+    },
+    {
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
+      costPrice: 1,
+      wholesalePrice: "Snow",
+      retailsalePrice: "Jon",
+      discount: 35,
+      stockType: "Jon",
+      bulkQnt: 35,
+      quantity: 35,
+    },
+    {
+      index: 1,
+      upc_code: "Snow",
+      productName: "Jon",
+      catogery: 35,
       costPrice: 1,
       wholesalePrice: "Snow",
       retailsalePrice: "Jon",
@@ -236,10 +294,115 @@ const ProductTable = () => {
     { label: "Quantity", placeholder: "Select quantity" },
   ];
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 w-full">
       <Filter filterOptions={filterOptions} />
-      <div className="table">
-
+      <div className=" rounded-t-xl overflow-auto min-w-full  max-w-[500]">
+        <table className="table-auto w-full">
+          <thead>
+            <tr className="bg-blue text-white">
+              {columns.map((column) => {
+                return (
+                  <td
+                    className="p-4 font-semibold tracking-wide"
+                    key={column.id}
+                    style={{
+                      minWidth: column.minWidth,
+                      textAlign: column.align,
+                    }}
+                  >
+                    {column.label}
+                  </td>
+                );
+              })}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => {
+              return (
+                <tr className=" border-b bg-white">
+                  <td className="p-4 font-regular tracking-wide text-center">
+                    {row.index}
+                  </td>
+                  <td className="p-4 font-regular tracking-wide">
+                    {row.upc_code}
+                  </td>
+                  <td className="p-4 font-regular tracking-wide">
+                    {row.productName}
+                  </td>
+                  <td className="p-4 font-regular tracking-wide">
+                    {row.catogery}
+                  </td>
+                  <td className="p-4 font-regular tracking-wide">
+                    {row.costPrice}
+                  </td>
+                  <td className="p-4 font-regular tracking-wide">
+                    {row.wholesalePrice}
+                  </td>
+                  <td className="p-4 font-regular tracking-wide">
+                    {row.retailsalePrice}
+                  </td>
+                  <td className="p-4 font-regular tracking-wide ">
+                    {row.discount}
+                  </td>
+                  <td className="p-4 font-regular tracking-wide ">
+                    {row.quantity}
+                  </td>
+                  <td className="p-4 font-regular tracking-wide ">
+                    {row.stockType}
+                  </td>
+                  <td className="p-4 font-regular tracking-wide ">
+                    {row.bulkQnt}
+                  </td>
+                  <td className="p-4 font-regular tracking-wide text-center">
+                    <button
+                      className="cursor-pointer"
+                      id="basic-button"
+                      aria-controls={open ? "basic-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={open ? "true" : undefined}
+                      onClick={handleClick}
+                    >
+                      <MoreHorizIcon />
+                    </button>
+                    <Menu
+                      id="basic-menu"
+                      anchorEl={anchorEl}
+                      open={open}
+                      onClose={handleClose}
+                      MenuListProps={{
+                        "aria-labelledby": "resources-button",
+                        backgroundColor: "#FFFFFF",
+                      }}
+                      PaperProps={{
+                        style: {
+                          borderRadius: 10,
+                          backgroundColor: "#FFFFFF",
+                          boxShadow: "none",
+                          width: "150px",
+                        },
+                      }}
+                      style={{
+                        backgroundColor: "rgba(0, 0, 0, 0.05)",
+                      }}
+                      anchorOrigin={{
+                        vertical: "bottom",
+                        horizontal: "left",
+                      }}
+                      transformOrigin={{
+                        vertical: "top",
+                        horizontal: "right",
+                      }}
+                    >
+                      <MenuItem onClick={handleClose}>Payment</MenuItem>
+                      <MenuItem onClick={handleClose}>Delete</MenuItem>
+                      <MenuItem onClick={handleClose}>Edit</MenuItem>
+                    </Menu>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </div>
   );

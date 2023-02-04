@@ -14,7 +14,7 @@ body {
 }
 .root {
   width: 100%;
-  min-height: 100vh;
+  // min-height: 100vh;
 }
 @font-face {
   font-family: "lato";
@@ -43,13 +43,15 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    width: 10px;
+  width: 10px;
   border-radius: 5px;
   width: 0;
   background-color: rgba($color: #707070, $alpha: 0.2);
   border: 1px solid rgba($color: #707070, $alpha: 0.3);
 }
 ::-webkit-scrollbar:horizontal {
+  // width: 10px;
+  // background-color: #f5f5f5;
   height: 0;
   width: 0;
   display: none;
@@ -57,13 +59,18 @@ body {
 
 ::-webkit-scrollbar-thumb:horizontal {
   display: none;
+  // width: 10px;
+  // border-radius: 5px;
+  // width: 0;
+  // background-color: rgba($color: #707070, $alpha: 0.2);
+  // border: 1px solid rgba($color: #707070, $alpha: 0.3);
 }
-.error-hint{
+.error-hint {
   color: red;
 }
-.w-95{
+.w-95 {
   width: 95% !important;
 }
-button{
+button {
   cursor: pointer;
 }

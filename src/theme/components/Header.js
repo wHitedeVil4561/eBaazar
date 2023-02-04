@@ -11,8 +11,8 @@ const Header = () => {
     setDarkTheme(value);
   };
   return (
-    <div className="shadow-lg w-full bg-white">
-      <div className="w-full flex justify-between items-center py-3 w-95 m-auto ">
+    <div className="shadow-lg w-full bg-white sticky top-0">
+      <div className="flex justify-between items-center py-3  w-95 mx-auto  ">
         <div className="logo flex items-center  gap-5">
           <img src={logo}></img>
           <span className="text-4xl font-bold text-blue font-lato">
@@ -21,11 +21,21 @@ const Header = () => {
         </div>
         <div className="flex gap-5">
           <div className="">
-            <AccountCircleIcon style={{ fontSize: 32,cursor:'pointer' }}  />
+            <AccountCircleIcon style={{ fontSize: 32, cursor: "pointer" }} />
           </div>
-          <LanguageIcon style={{ fontSize: 32,cursor:'pointer' }} />
-          {darkTheme && <DarkModeIcon style={{ fontSize: 32,cursor:'pointer' }} onClick={() => changeTheme(false)} />}
-          {!darkTheme && <LightModeIcon style={{ fontSize: 32,cursor:'pointer' }} onClick={() => changeTheme(true)} />}
+          <LanguageIcon style={{ fontSize: 32, cursor: "pointer" }} />
+          {darkTheme && (
+            <DarkModeIcon
+              style={{ fontSize: 32, cursor: "pointer" }}
+              onClick={() => changeTheme(false)}
+            />
+          )}
+          {!darkTheme && (
+            <LightModeIcon
+              style={{ fontSize: 32, cursor: "pointer" }}
+              onClick={() => changeTheme(true)}
+            />
+          )}
         </div>
       </div>
     </div>

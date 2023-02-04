@@ -6,7 +6,6 @@ import Header from "./components/Header";
 import Sidenav from "./components/Sidenav";
 
 const ThemeLayout = () => {
-  
   const [width, setWindowWidth] = useState(0);
   useEffect(() => {
     updateDimensions();
@@ -20,13 +19,14 @@ const ThemeLayout = () => {
     setWindowWidth(width);
   };
   return (
-    <div className="bg-neu-light min-h-screen flex flex-col gap-5">
+    <div className="bg-neu-light w-full flex flex-col gap-6">
       <Header />
-      <div className="screen w-95 mx-auto flex gap-8">
-        <div className="sidenav flex items-center">
-          <Sidenav />
-        </div>
+      <div className="screen flex gap-5 w-95 mx-auto">
+        <Sidenav />
         <Outlet />
+
+        {/* <div className="sidenav"></div>
+        <div className="w-full"></div> */}
       </div>
     </div>
   );
