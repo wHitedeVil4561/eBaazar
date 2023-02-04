@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import Filter from "../../../shared/components/Filter/Filter";
 
 const columns = [
   { id: "index", label: "S.No.", minWidth: 80, align: "center" },
@@ -134,7 +133,7 @@ const data = [
 const formateCurrency = (value) => {
   return Number(value).toLocaleString("en-IN");
 };
-const Supplier = () => {
+const SupplierTable = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -145,7 +144,7 @@ const Supplier = () => {
   };
   return (
     <div className="flex flex-col gap-5">
-      <Filter />
+      {/* <Filter /> */}
       <div className=" rounded-t-xl">
         <table className="table-auto">
           <thead>
@@ -248,56 +247,5 @@ const Supplier = () => {
     </div>
   );
 };
-export default Supplier;
-{/* <Menu
-  id="basic-menu"
-  anchorEl={anchorEl}
-  open={open}
-  onClose={handleClose}
-  MenuListProps={{
-    "aria-labelledby": "resources-button",
-    backgroundColor: "#FFFFFF",
-  }}
-  PaperProps={{
-    style: {
-      borderRadius: 10,
-      backgroundColor: "#FFFFFF",
-    },
-  }}
-  style={{
-    marginTop: 52,
-    backgroundColor: "rgba(0, 0, 0, 0.27)",
-  }}
-  anchorOrigin={{
-    vertical: "bottom",
-    horizontal: "right",
-  }}
-  transformOrigin={{
-    vertical: "top",
-    horizontal: "right",
-  }}
->
-  <MenuItem onClick={onPressApprove}>
-    <img src={images.singleTickIcon} alt="" className={styles.singleTickIcon} />
-    <p className={styles.approveTextStyle}>Approve</p>
-  </MenuItem>
-  <MenuItem onClick={handleClose}>
-    <img src={images.crossIcon} alt="" className={styles.crossIcon} />
-    <p className={styles.rejectTextStyle}>Reject</p>
-  </MenuItem>
-  <MenuItem onClick={handleClose}>
-    <img src={images.doubleTickIcon} alt="" className={styles.doubleTickIcon} />
-    <p className={styles.approvedWithChangesTextStyle}>Approved with changes</p>
-  </MenuItem>
-  <MenuItem style={{ alignItems: "flex-start" }} onClick={handleClose}>
-    <img
-      src={images.moreDetailsImage}
-      alt=""
-      className={styles.moreDetailsImageStyle}
-    />
-    <div>
-      <p className={styles.viewMaintenanceTextStyle}>View maintenance bill, </p>
-      <p className={styles.viewMaintenanceTextStyle}>note & details</p>
-    </div>
-  </MenuItem>
-</Menu>; */}
+export default SupplierTable;
+

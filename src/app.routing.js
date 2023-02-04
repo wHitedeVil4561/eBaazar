@@ -7,14 +7,18 @@ import ResetPassword from "./modules/auth/components/ResetPassword";
 import ThemeLayout from "./theme/ThemeLayout";
 import Dashboard from "./modules/dashboard/Dashboard";
 import ProductLayout from "./modules/products/Product";
-import ProductTable from "./modules/products/components/product-table/ProductTable";
-import AddProduct from "./modules/products/components/add-product/AddProduct";
+import ProductTable from "./modules/products/components/ProductTable";
+import AddProduct from "./modules/products/components/AddProduct";
 import SupplierLayout from "./modules/suppliers/Suppliers";
-import Supplier from "./modules/suppliers/components/StockTable";
+import SupplierTable from "./modules/suppliers/components/StockTable";
 import AddStock from "./modules/suppliers/components/AddStock";
-
+import Header from "./theme/components/Header";
 
 const appRouter = createBrowserRouter([
+  {
+    path: "/header",
+    element: <Header />,
+  },
   {
     path: "/",
     element: <AuthLayout />,
@@ -41,7 +45,7 @@ const appRouter = createBrowserRouter([
         path: "/",
         element: <SupplierLayout />,
         children: [
-          { path: "/supplier", element: <Supplier /> },
+          { path: "/supplier", element: <SupplierTable /> },
           {
             path: "/supplier/add-stock",
             element: <AddStock />,
