@@ -13,41 +13,52 @@ import SupplierLayout from "./modules/suppliers/Suppliers";
 import SupplierTable from "./modules/suppliers/components/StockTable";
 import AddStock from "./modules/suppliers/components/AddStock";
 import Header from "./theme/components/Header";
+import BillingLayout from "./modules/billing/Billing";
+import CustomersLayout from "./modules/customers/Customer";
+import CustomersTable from "./modules/customers/components/CustomerTable";
+import AddCustomer from "./modules/customers/components/AddCustomer";
 
 const appRouter = createBrowserRouter([
   {
-    path: "/header",
-    element: <Header />,
-  },
-  {
-    path: "/",
+    path: "/auth",
     element: <AuthLayout />,
     children: [
-      { path: "/", element: <Login /> },
-      { path: "/forgot-password", element: <ForgotPassword /> },
-      { path: "/reset-password", element: <ResetPassword /> },
+      { path: "/auth/login", element: <Login /> },
+      { path: "/auth/forgot-password", element: <ForgotPassword /> },
+      { path: "/auth/reset-password", element: <ResetPassword /> },
     ],
   },
   {
-    path: "/",
+    path: "/app",
     element: <ThemeLayout />,
     children: [
-      { path: "/dashboard", element: <Dashboard /> },
+      { path: "/app/dashboard", element: <Dashboard /> },
       {
-        path: "/product",
+        path:'/app/billing',element:<BillingLayout/>,children:[
+          // {path:"/app/billing/retail-sale"}
+        ]
+      },
+      {
+        path:"/app/customers",element:<CustomersLayout/>,children:[
+          {path:"/app/customers/list",element:<CustomersTable/>},
+          {path:'/app/customers/add-customer',element:<AddCustomer/>}
+        ]
+      },
+      {
+        path: "/app/product",
         element: <ProductLayout />,
         children: [
-          { path: "/product", element: <ProductTable /> },
-          { path: "/product/add-product", element: <AddProduct /> },
+          { path: "/app/product/list", element: <ProductTable /> },
+          { path: "/app/product/add-product", element: <AddProduct /> },
         ],
       },
       {
-        path: "/",
+        path: "/app/supply",
         element: <SupplierLayout />,
         children: [
-          { path: "/supplier", element: <SupplierTable /> },
+          { path: "/app/supply/list", element: <SupplierTable /> },
           {
-            path: "/supplier/add-stock",
+            path: "/app/supply/add-stock",
             element: <AddStock />,
           },
         ],
