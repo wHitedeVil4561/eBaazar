@@ -44,11 +44,17 @@
     "SUBMIT":"जमा करना",
     "CUSTOMER_NAME":"ग्राहक का नाम",
     "MOBILE_NO":"मोबाइल नंबर",
+    "EMAIL_ADDRESS":"मेल पता",
     "ADDRESS":"पता",
     "PRINT":"प्रिंट",
     "LEND":"उधार देना",
     "PAYMENT":"भुगतान राशि",
-    "TOTAL_DUE":"कुल बचे"
+    "TOTAL_DUE":"कुल बचे",
+    "TOTAL_LEND_AMOUT":"कुल उधार राशि",
+    "TOTAL_DUE_AMOUNT":"कुल बकाया राशि",
+    "DUE_AMOUNT":"बकाया राशि",
+    "LAST_PAYMENT_DATE":"अंतिम भुगतान तिथि",
+    "LAST_PURCHASE_DATE":"अंतिम खरीद तिथि"
 
 
 }

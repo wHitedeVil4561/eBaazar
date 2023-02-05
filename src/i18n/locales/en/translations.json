@@ -44,11 +44,18 @@
     "SUBMIT":"Submit",
     "CUSTOMER_NAME":"Customer Name",
     "MOBILE_NO":"Mobile No",
+    "EMAIL_ADDRESS":"Email Address",
     "ADDRESS":"Address",
     "PRINT":"Print",
     "LEND":"Lend",
     "PAYMENT":"Payment",
-    "TOTAL_DUE":"Total Due"
+    "TOTAL_DUE":"Total Due",
+    "TOTAL_LEND_AMOUT":"Total Lend Amount",
+    "TOTAL_DUE_AMOUNT":"Total Due Amount",
+    "DUE_AMOUNT":"Due Amount",
+    "LAST_PAYMENT_DATE":"Last Payment Date",
+    "LAST_PURCHASE_DATE":"Last Purchase Date"
+    
 
 
 }

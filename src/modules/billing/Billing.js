@@ -78,28 +78,28 @@ const BillingLayout = () => {
       total: 8,
     },
   ]);
-  const [totalCount,setTotalCount] = useState(rows.length);
+  const [totalCount, setTotalCount] = useState(rows.length);
 
-  const calculateTotal = ()=>{
-    let total =0;
-    rows.forEach((row)=>{
-      total+=row.total
+  const calculateTotal = () => {
+    let total = 0;
+    rows.forEach((row) => {
+      total += row.total;
     });
-    return total
-  }
-  const caculateTotalDiscount = ()=>{
+    return total;
+  };
+  const caculateTotalDiscount = () => {
     let discount = 0;
-    rows.forEach((row)=>{
-      discount+=row.discount
+    rows.forEach((row) => {
+      discount += row.discount;
     });
     return discount;
-  }
-  const calculateSubTotal = ()=>{
+  };
+  const calculateSubTotal = () => {
     return grandTotal + discountTotal;
-  }
-  const discountTotal = useMemo(()=>caculateTotalDiscount(),[rows])
-  const grandTotal = useMemo(()=>calculateTotal(),[rows])
-  const subTotal= useMemo(()=>calculateSubTotal(),[grandTotal])
+  };
+  const discountTotal = useMemo(() => caculateTotalDiscount(), [rows]);
+  const grandTotal = useMemo(() => calculateTotal(), [rows]);
+  const subTotal = useMemo(() => calculateSubTotal(), [grandTotal]);
   const onchangeQty = (i, isIncrement) => {
     if (isIncrement) {
       setRows(
@@ -127,16 +127,16 @@ const BillingLayout = () => {
       );
   };
 
-  const onRemoveItem = (i)=>{
+  const onRemoveItem = (i) => {
     let temprows = [...rows];
-    temprows.splice(i,1)
+    temprows.splice(i, 1);
     setRows(temprows);
-    setTotalCount(temprows.length)
-  }
-  const onReset = ()=>{
+    setTotalCount(temprows.length);
+  };
+  const onReset = () => {
     setRows([]);
-    setTotalCount(0)
-  }
+    setTotalCount(0);
+  };
 
   return (
     <div className="w-full flex flex-col gap-5 mb-10">
@@ -266,7 +266,10 @@ const BillingLayout = () => {
                   <td className="border p-2 text-right">{row.salePrice}</td>
                   <td className="border p-2 text-right">{row.total}</td>
                   <td className="border text-center">
-                    <DeleteForeverIcon className="cursor-pointer" onClick = {()=>onRemoveItem(i)} />
+                    <DeleteForeverIcon
+                      className="cursor-pointer"
+                      onClick={() => onRemoveItem(i)}
+                    />
                   </td>
                 </tr>
               );
@@ -297,7 +300,7 @@ const BillingLayout = () => {
           </span>
           <span className="w-1/4 p-2 text-right">0</span>
         </div>
-        <div className="flex border-b">
+        <div className="flex">
           <span className="w-3/4 p-2 text-right border-r">
             {t("GRAND_TOTAL")}
           </span>
@@ -308,34 +311,17 @@ const BillingLayout = () => {
             <span className="w-1/4 text-right">{grandTotal}</span>
           </div>
         </div>
-        <div className="flex border-b">
-          <span className="w-3/4 p-2 text-right border-r">{t("PAYMENT")}</span>
-          <div className="flex justify-between pr-2 w-1/4 items-center">
-            <div className="bg-neu-light h-full flex justify-center items-center p-2">
-              <img src={rupee} className="w-5 h-5 "></img>
-            </div>
-            <span className="w-1/4 text-right">6732328</span>
-          </div>
-          {/* <span className="w-1/4 p-2 text-right">6732328</span> */}
-        </div>
-        <div className="flex ">
-          <span className="w-3/4 p-2 text-right border-r">
-            {t("TOTAL_DUE")}
-          </span>
-          <div className="flex justify-between pr-2 w-1/4 items-center">
-            <div className="bg-neu-light h-full flex justify-center items-center p-2">
-              <img src={rupee} className="w-5 h-5 "></img>
-            </div>
-            <span className="w-1/4 text-right">6732328</span>
-          </div>
-          {/* <span className="w-1/4 p-2 text-right">6732328</span> */}
-        </div>
+       
+        
       </div>
       <div className="flex gap-5 justify-end">
         <button className="py-2 min-w-[140] text-white text-xl bg-light-orange rounded-lg tracking-wider font-medium">
           {t("LEND")}
         </button>
-        <button className="py-2 min-w-[140] text-white text-xl bg-blue-hues rounded-lg tracking-wider font-medium" onClick={()=>onReset()}>
+        <button
+          className="py-2 min-w-[140] text-white text-xl bg-blue-hues rounded-lg tracking-wider font-medium"
+          onClick={() => onReset()}
+        >
           {t("RESET")}
         </button>
         <button className="py-2 min-w-[140] text-white text-xl bg-light-green rounded-lg tracking-wider font-medium">
