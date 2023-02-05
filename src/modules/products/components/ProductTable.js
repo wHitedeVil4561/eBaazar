@@ -5,7 +5,9 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import {useTranslation} from "react-i18next"
 const ProductTable = () => {
+  const {t} = useTranslation();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -16,63 +18,63 @@ const ProductTable = () => {
   };
   const columns = [
     {
-      id: "index",
-      label: "S.No.",
+      id: 'index',
+      label: t('S.NO.'),
       minWidth: 70,
     },
     {
       id: "upc_code",
-      label: "UPC Code",
+      label: t("UPC_CODE"),
       minWidth: 120,
     },
     {
       id: "productName",
-      label: "Product Name",
+      label: t('PRODUCT_NAME'),
       minWidth: 150,
     },
     {
       id: "catogery",
-      label: "Category",
+      label: t('CATEGORY'),
       minWidth: 100,
     },
     {
       id: "costPrice",
-      label: "Cost Price",
+      label: t('COST_PRICE'),
       minWidth: 120,
     },
     {
       id: "wholesalePrice",
-      label: "Wholesale Price",
+      label: t('WHOLESALE_PRICE'),
       minWidth: 160,
     },
     {
       id: "retailsalePrice",
-      label: "Retailsale Price",
+      label: t('RETAILSALE_PRICE'),
       minWidth: 150,
     },
     {
       id: "discount",
-      label: "Discount",
+      label: t('DISCOUNT'),
       minWidth: 100,
     },
     {
       id: "quantity",
-      label: "Quantity",
+      label: t('QUANTITY'),
       minWidth: 100,
     },
     {
       id: "stockType",
-      label: "Stock Type",
+      label: t('STOCK_TYPE'),
       minWidth: 100,
     },
     {
       id: "bulkQnt",
-      label: "Bulk Quantity",
+      label: t('BULK_QUNATITY'),
       minWidth: 150,
     },
     {
       id: "action",
-      label: "Action(s)",
+      label: t('ACTION'),
       minWidth: 150,
       align: "center",
     },

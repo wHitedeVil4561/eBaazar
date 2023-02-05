@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-
+import Filter from "../../../shared/components/Filter";
 const columns = [
   { id: "index", label: "S.No.", minWidth: 80, align: "center" },
   { id: "dealerName", label: "Dealer Name", minWidth: 150 },
@@ -142,11 +142,17 @@ const SupplierTable = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const filterOptions = [
+    { label: "Brand", placeholder: "Select Brand" },
+    { label: "Category", placeholder: "Select Category" },
+    { label: "Cost", placeholder: "Select Cost-range" },
+    { label: "Quantity", placeholder: "Select quantity" },
+  ];
   return (
-    <div className="flex flex-col gap-5">
-      {/* <Filter /> */}
-      <div className=" rounded-t-xl">
-        <table className="table-auto">
+    <div className="flex flex-col w-full gap-5">
+      <Filter filterOptions={filterOptions}/>
+      <div className=" rounded-t-xl overflow-auto  max-w-[500] min-w-full  ">
+        <table className="table-auto min-w-full  ">
           <thead>
             <tr className="bg-blue text-white">
               {columns.map((column) => {

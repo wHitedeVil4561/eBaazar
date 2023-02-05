@@ -23,6 +23,7 @@ module.exports = {
         "purple-blue": "#4B70E2",
         "blue-hues": "#464493",
         "input-border": "#bfd1e3",
+        "light-green":"#4BB543"
       },
       fontFamily:{
         lato:'lato',
